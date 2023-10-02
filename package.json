@@ -1,0 +1,25 @@
+{
+  "name": "vite",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-watch": "^5.0.1",
+    "vite": "^4.3.9"
+  },
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "node-sass": "^9.0.0"
+  },
+  "main": "main.js",
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
