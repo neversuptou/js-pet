@@ -1,13 +1,15 @@
 // Выбор случайных обоев
+const timeToday = new Date;
 const timeOfDay = getTimeDay();
 let min = 1;
 let max = 6;
 
+
 let start = Math.floor(Math.random() * (max - min)) + min;
-const sil = `url('../src/image/${timeOfDay}/${start}.jpg')`
+const sil = `url('/src/image/${timeOfDay}/${start}.jpg')`
 document.querySelector(".body").style.backgroundImage=sil;
 
-const timeToday = new Date;
+
 
 function getTimeDay(){
    let currentTime = timeToday.getHours();
@@ -81,3 +83,25 @@ function getName(){
     return 'Good night'
    }
   }
+
+  function changeGood(){
+    let currentTime = timeToday.getHours();
+    const good = document.querySelector(".goods")
+    let pool;
+   if( currentTime >= 6 && currentTime < 12) {
+     pool ='Good morning';
+     good.textContent = pool;
+     return
+   }
+   if( currentTime >= 12 && currentTime < 18) {
+    pool = 'Good afternoon';
+    good.textContent = pool;
+    return
+  } 
+   else {
+    pool ='Good night'
+    good.textContent = pool;
+    return
+  }
+}
+changeGood();
