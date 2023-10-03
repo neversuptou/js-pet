@@ -1,4 +1,5 @@
 body {
+  overflow: hidden;
   font-family: Arial, Helvetica, sans-serif;
   max-width: 100%;
   min-height: 100%;
@@ -47,5 +48,38 @@ main .slide-next {
   right: 20px;
   background-image: url(../src/icons/slider-next.svg);
   background-size: cover; }
+
+.greeting {
+  color: white;
+  padding: 10px;
+  font-size: 40px;
+  flex: 1;
+  text-align: right; }
+
+.user-name {
+  text-align: left;
+  color: white;
+  font-size: large;
+  background-color: rgba(240, 248, 255, 0);
+  border: none;
+  font-size: 40px;
+  flex: 1; }
+  .user-name:focus-visible {
+    outline: none; }
+
+.col-6 {
+  display: flex;
+  width: 50%;
+  flex-wrap: wrap;
+  justify-content: stretch;
+  align-items: center; }
+
+.col-12 {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px; }
+
+.row {
+  display: flex; }
 
 /*# sourceMappingURL=main.css.map */

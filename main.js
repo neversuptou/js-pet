@@ -73,7 +73,7 @@ function showDate(element){
 
 showDate('.date');
 
-// Good 
+// Greeting
 
 function getName(){
    let currentTime = timeToday.getHours();
@@ -84,24 +84,39 @@ function getName(){
    }
   }
 
-  function changeGood(){
+  
+  function changeGreeting(){
     let currentTime = timeToday.getHours();
-    const good = document.querySelector(".goods")
+    const greeting = document.querySelector(".greeting")
     let pool;
    if( currentTime >= 6 && currentTime < 12) {
      pool ='Good morning';
-     good.textContent = pool;
+     greeting.textContent = pool;
      return
    }
    if( currentTime >= 12 && currentTime < 18) {
     pool = 'Good afternoon';
-    good.textContent = pool;
+    greeting.textContent = pool;
     return
   } 
    else {
     pool ='Good night'
-    good.textContent = pool;
+    greeting.textContent = pool;
     return
   }
 }
-changeGood();
+changeGreeting();
+
+// Input change
+// Получаем ссылку на инпут и кнопку сохранения
+// const input = document.querySelector("userName");
+
+// // Проверяем, есть ли сохраненное значение в кэше
+// if (localStorage.getItem(input)) {
+//   input.value = localStorage.getItem(input);
+// }
+
+// // Обработчик события для сохранения значения в кэше
+// saveBtn.addEventListener("click", function() {
+//   localStorage.setItem("savedInput", input.value);
+// });

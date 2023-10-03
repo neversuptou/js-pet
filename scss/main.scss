@@ -1,4 +1,5 @@
 body{
+  overflow: hidden;
   font-family: Arial, Helvetica, sans-serif;
   // width: 100%;
     max-width: 100%;
@@ -9,8 +10,6 @@ background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed; 
   transition: background-image 1s ease-in-out;
-  
-  
 }
 header{
 }
@@ -27,6 +26,7 @@ main{
     align-items: center;
     text-align: center;
     height: 100vh;
+    
   }
   .time{
     font-weight: bold;
@@ -35,7 +35,6 @@ main{
     letter-spacing: 4px;
   }
   .date{
-    
     color: white;
     font-size: 30px;
     letter-spacing: 4px;
@@ -59,36 +58,37 @@ main{
     background-size:cover;
   }
 }
-// .tabs-nav {
-//   list-style: none;
-//   padding: 0;
-//   margin: 0;
-//   display: flex;
-// }
-
-// .tabs-nav-item {
-//   cursor: pointer;
-//   padding: 10px;
-//   margin-right: 10px;
-//   background-color: #f5f5f5;
-// }
-
-// .tabs-nav-item.active {
-//   background-color: #ffffff;
-// }
-
-// .tabs-content .tab-item {
-//   display: none;
-//   padding: 20px;
-// }
-
-// .tabs-content .tab-item.active {
-//   display: block;
-// }
-// .centerMain {
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-  
-// }
-
+.greeting{
+  color: white;
+  padding: 10px;
+  font-size: 40px;
+  flex: 1;
+  text-align: right;
+}
+.user-name{
+  text-align: left;
+  color: white;
+  font-size: large;
+  background-color: rgba(240, 248, 255, 0);
+  border: none;
+  font-size: 40px;
+  flex: 1;
+  &:focus-visible{
+    outline: none;
+  }
+}
+.col-6{
+  display: flex;
+  width: 50%;
+  flex-wrap:wrap;
+  justify-content: stretch;
+  align-items: center;
+}
+.col-12{
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.row{
+display: flex;
+}
