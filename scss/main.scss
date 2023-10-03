@@ -77,6 +77,9 @@ main{
     outline: none;
   }
 }
+.user-name::placeholder {
+  color: rgb(221, 212, 212);
+}
 .col-6{
   display: flex;
   width: 50%;

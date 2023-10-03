@@ -108,6 +108,20 @@ function getName(){
 changeGreeting();
 
 // Input change
+
+let formData;
+const form = document.querySelector('#user-name');
+const LS = localStorage;
+
+form.addEventListener('input', function(e){
+  formData= e.target.value;
+  LS.setItem('savedName', formData)
+});
+
+if(LS.getItem('savedName')) {
+  formData = LS.getItem('savedName');
+  form.value = formData;
+}
 // Получаем ссылку на инпут и кнопку сохранения
 // const input = document.querySelector("userName");
 

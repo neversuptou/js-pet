@@ -67,6 +67,9 @@ main .slide-next {
   .user-name:focus-visible {
     outline: none; }
 
+.user-name::placeholder {
+  color: #ddd4d4; }
+
 .col-6 {
   display: flex;
   width: 50%;
