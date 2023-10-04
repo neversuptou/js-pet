@@ -138,22 +138,22 @@ if(LS.getItem('savedName')) {
 // QUOTE
 const quote = document.querySelector('.quote');
 const author = document.querySelector('.author');
-const quoteBtn = document.querySelector('.change-quote')
+const quoteBtn = document.querySelector('.changeQuote');
 
 async function getQuote() {
-    const quotes = 'https://neversuptou.github.io/js-pet/data.json'
+    const quotes = 'https://neversuptou.github.io/data.json';
     const res = await fetch(quotes);
     const data = await res.json();
 
-    const numberOfQuote = Math.floor(Math.random() * data.length)
+    const numberOfQuote = Math.floor(Math.random() * data.length);
 
-    quote.textContent = data[numberOfQuote].text
-    author.textContent = data[numberOfQuote].author
+    quote.textContent = data[numberOfQuote].text;
+    author.textContent = data[numberOfQuote].author;
 }
-
-function changeQuote() {
-    quoteBtn.addEventListener('click', () => {
-        getQuote()
-    })
-}
-changeQuote()
+getQuote();
+ function changeQuote() {
+     quoteBtn.addEventListener('click', () => {
+         getQuote();
+     })
+ }
+changeQuote();
