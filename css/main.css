@@ -9,45 +9,42 @@ body {
   background-attachment: fixed;
   transition: background-image 1s ease-in-out; }
 
-main button {
-  background-color: rgba(255, 0, 0, 0);
-  border: none;
-  width: 32px;
-  height: 32px; }
-
-main .centerMain {
+main {
   display: flex;
+  width: 100%;
   justify-content: center;
   align-items: center;
   text-align: center;
-  height: 100vh; }
-
-main .time {
-  font-weight: bold;
-  color: white;
-  font-size: 100px;
-  letter-spacing: 4px; }
-
-main .date {
-  color: white;
-  font-size: 30px;
-  letter-spacing: 4px; }
-
-main .slider-icon {
-  position: absolute;
-  top: 50%; }
-  main .slider-icon:active {
-    transform: scale(1.1); }
-
-main .slide-prev {
-  left: 20px;
-  background-image: url(../src/icons/slider-prev.svg);
-  background-size: cover; }
-
-main .slide-next {
-  right: 20px;
-  background-image: url(../src/icons/slider-next.svg);
-  background-size: cover; }
+  height: 40vh;
+  min-height: 260px;
+  padding: 20px; }
+  main button {
+    background-color: rgba(255, 0, 0, 0);
+    border: none;
+    width: 32px;
+    height: 32px; }
+  main .time {
+    font-weight: bold;
+    color: white;
+    font-size: 100px;
+    letter-spacing: 4px; }
+  main .date {
+    color: white;
+    font-size: 30px;
+    letter-spacing: 4px; }
+  main .slider-icon {
+    position: absolute;
+    top: 50%; }
+    main .slider-icon:active {
+      transform: scale(1.1); }
+  main .slide-prev {
+    left: 20px;
+    background-image: url(../src/icons/slider-prev.svg);
+    background-size: cover; }
+  main .slide-next {
+    right: 20px;
+    background-image: url(../src/icons/slider-next.svg);
+    background-size: cover; }
 
 .greeting {
   color: white;
