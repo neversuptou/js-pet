@@ -92,5 +92,16 @@ main {
   text-align: center;
   color: white;
   font-size: 20px; }
+  .footer button {
+    background-color: rgba(255, 0, 0, 0);
+    border: none;
+    width: 32px;
+    height: 32px; }
+
+.changeQuote {
+  background-image: url(/src/icons/reload.svg);
+  background-size: cover; }
+  .changeQuote:active {
+    transform: scale(1.1); }
 
 /*# sourceMappingURL=main.css.map */

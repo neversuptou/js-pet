@@ -108,4 +108,17 @@ display: flex;
   text-align: center;
   color: white;
   font-size: 20px;
+  button{
+    background-color: rgba(255, 0, 0, 0);
+    border: none;
+    width: 32px;
+    height: 32px;
+  }
+}
+.changeQuote{
+  background-image: url(/src/icons/reload.svg);
+  background-size:cover;
+  &:active{
+    transform: scale(1.1);
+    }
 }
