@@ -157,3 +157,11 @@ getQuote();
      })
  }
 changeQuote();
+
+//WEATHER
+
+async function getWeather() {
+const urlWeather = 'https://api.openweathermap.org/data/2.5/weather?q=Tula&appid=f470065964970f79cd9277dc68396d2a&units=metric'
+const resWeather = await fetch(urlWeather);
+const data = await resWeather.json();
+}

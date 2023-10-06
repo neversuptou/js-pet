@@ -104,4 +104,8 @@ main {
   .changeQuote:active {
     transform: scale(1.1); }
 
+header {
+  display: flex;
+  justify-content: space-between; }
+
 /*# sourceMappingURL=main.css.map */
