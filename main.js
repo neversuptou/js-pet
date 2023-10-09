@@ -159,9 +159,21 @@ getQuote();
 changeQuote();
 
 //WEATHER
+const temperature = document.querySelector('.temperature');
+const weatherDiscription = document.querySelector('.weather-discription');
+const weatherIcon = document.querySelector('.weather-icon');
 
 async function getWeather() {
-const urlWeather = 'https://api.openweathermap.org/data/2.5/weather?q=Tula&appid=f470065964970f79cd9277dc68396d2a&units=metric'
+const urlWeather = 'https://api.openweathermap.org/data/2.5/weather?q=Tula&appid=f470065964970f79cd9277dc68396d2a&units=metric&lang=ru'
 const resWeather = await fetch(urlWeather);
 const data = await resWeather.json();
+try{
+  temperature.textContent = `${data.main.temp}°C`;
+  weatherDiscription.textContent = data.weather[0].description;
+  weatherIcon.classList.add(`owf-${data.weather[0].id}`);
 }
+catch{
+
+}
+}
+getWeather()
