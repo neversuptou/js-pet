@@ -158,22 +158,99 @@ getQuote();
  }
 changeQuote();
 
-//WEATHER
+// WEATHER
+
 const temperature = document.querySelector('.temperature');
 const weatherDiscription = document.querySelector('.weather-discription');
 const weatherIcon = document.querySelector('.weather-icon');
+const inputCity = document.querySelector('.city');
+const weatherError = document.querySelector('.weather-error');
 
-async function getWeather() {
-const urlWeather = 'https://api.openweathermap.org/data/2.5/weather?q=Tula&appid=f470065964970f79cd9277dc68396d2a&units=metric&lang=ru'
-const resWeather = await fetch(urlWeather);
-const data = await resWeather.json();
+async function getWeather(city) {
+const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=ru&appid=481675063c4d401c0d9fb14af851f41e&units=metric`;
+    const res = await fetch(url);
+    const data = await res.json();
 try{
+  weatherError.textContent = ''
   temperature.textContent = `${data.main.temp}°C`;
   weatherDiscription.textContent = data.weather[0].description;
+  weatherIcon.classList.add('weather-icon');
+  weatherIcon.classList.add('owf');
   weatherIcon.classList.add(`owf-${data.weather[0].id}`);
+}catch{
+  temperature.textContent = ' ';
+  weatherDiscription.textContent = ' ';
+  weatherError.textContent = 'There is no such city. Try another one.';
+  weatherIcon.removeAttribute('class');
 }
-catch{
+}
+
+function showWeather(defaultCity) {
+  inputCity.addEventListener('change', () => {
+      if (inputCity.value) {
+          localStorage.setItem('city', inputCity.value)
+          getWeather(inputCity.value)
+      }
+  })
+  if (localStorage.getItem('city')) {
+      inputCity.value = localStorage.getItem('city')
+      getWeather(inputCity.value)
+  } else {
+      inputCity.value = defaultCity
+      getWeather(defaultCity)
+  }
 
 }
+showWeather('Tula');
+
+// PLAYER
+
+const play = document.querySelector('.play');
+const pause = document.querySelector('.pause');
+const playPrevBtn = document.querySelector('.prev-play');
+const playNextBtn = document.querySelector('.next-play');
+const list = document.querySelector('ul')
+
+const playList = [
+  {
+      title: 'Aqua Caelestis',
+      src: '/src/sounds/Aqua Caelestis.mp3',
+      duration: '00:58'
+  },
+  {
+      title: 'River Flows In You',
+      src: '/src/sounds/River Flows In You.mp3',
+      duration: '03:50'
+  },
+  {
+      title: 'Ennio Morricone',
+      src: '/src/sounds/Ennio Morricone.mp3',
+      duration: '01:37'
+  },
+  {
+    title: 'Summer Wind',
+      src: '/src/sounds/Summer Wind.mp3',
+      duration: '01:50'
+  }
+]
+
+function playAudio(){
+  let isPlay = false
+  let playNum = 0;
 }
-getWeather()
+
+function createPlayList() {
+  for (let i = 0; i < playList.length; i++) {
+      let li =list.createElement('ul');
+      // li.textContent = playList[i].title
+      // list.append(li)
+  }
+}
+
+function renderAudio() {
+  if (!isPlay) {
+    playAudio();
+  } else {
+    pauseAudio();
+  }
+}

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   overflow: hidden;
   font-family: Arial, Helvetica, sans-serif;
@@ -107,10 +108,15 @@ main {
 header {
   display: flex;
   justify-content: space-between; }
+  header .weather {
+    display: grid;
+    color: white; }
+    header .weather i {
+      font-size: 44px; }
 
-.input-city {
-  background: none;
+.city {
   color: white;
+  background: none;
   border: none;
   border-bottom-width: medium;
   border-bottom-style: none;
@@ -118,5 +124,38 @@ header {
   border-bottom: 1px solid white;
   outline: none;
   font-size: 15px; }
+
+.player .control-play button {
+  background-color: rgba(255, 0, 0, 0);
+  border: none;
+  width: 32px;
+  height: 32px;
+  background-size: cover; }
+  .player .control-play button:active {
+    transform: scale(1.1); }
+
+.player .control-play .prev-play {
+  background-image: url(/src/icons/play-prev.svg); }
+
+.player .control-play .play {
+  background-image: url(/src/icons/play.svg); }
+
+.player .control-play .pause {
+  background-image: url(/src/icons/pause.svg); }
+
+.player .control-play .next-play {
+  background-image: url(/src/icons/play-next.svg); }
+
+.player .control-play .hide-btn {
+  display: none; }
+
+.player .music-list {
+  color: white; }
+  .player .music-list ul {
+    text-align: center;
+    margin: 10px;
+    padding: 0; }
+    .player .music-list ul:before {
+      content: "✓ "; }
 
 /*# sourceMappingURL=main.css.map */

@@ -124,12 +124,16 @@ header{
 display: flex;
 justify-content: space-between;
 .weather{
-  
-}
-}
-.input-city{
-  background:none;
+  display: grid;
   color: white;
+  i{
+    font-size: 44px;
+  }
+}
+}
+.city{
+  color: white;
+  background:none;
   border: none;
   border-bottom-width: medium;
   border-bottom-style: none;
@@ -138,3 +142,43 @@ justify-content: space-between;
   outline: none;
   font-size: 15px;
 }
+.player{
+.control-play{
+  button{
+  background-color: rgba(255, 0, 0, 0);
+  border: none;
+  width: 32px;
+  height: 32px;
+  background-size:cover;
+  &:active{
+    transform: scale(1.1);
+    }
+}
+  .prev-play{
+    background-image: url(/src/icons/play-prev.svg);
+  }
+  .play{
+    background-image: url(/src/icons/play.svg);
+  }
+  .pause{
+    background-image: url(/src/icons/pause.svg);
+  }
+  .next-play{
+    background-image: url(/src/icons/play-next.svg);
+  }
+  .hide-btn{
+    display: none;
+  }
+}
+.music-list{
+  color: white;
+  ul{
+    text-align: center;
+    margin: 10px;
+    padding: 0;
+    &:before{
+        content: "✓ ";
+       }
+    }
+}
+  }

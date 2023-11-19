@@ -4,16 +4,30 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/main.css">
+    <link href="css/owfont-regular.css" rel="stylesheet" type="text/css">
     <title>Powerfull JS</title>
   </head>
   <body class="body">
     <header class="header">
       <div class="player">
-        123
+        <div class="control-play">
+          <button class="prev-play"></button>
+          <button class="play"></button>
+          <button class="pause hide-btn"></button>
+          <button class="next-play"></button>
+        </div>
+        <div class="music-list">
+          <li>
+            <ul>song1</ul>
+            <ul>song2</ul>
+            <ul>song3</ul>
+            <ul>song4</ul>
+          </li>
+        </div>
       </div>
       <div class="weather">
-        <input type="text" class="input-city" id="input-city" placeholder="Enter your city">
-        <i class="weather-icon"></i>
+        <input type="text" class="city" placeholder="Enter your city">
+        <i class="weather-icon owf"> </i>
         <div class="weather-error"></div>
         <div class="discription-container">
           <span class="temperature"></span>
