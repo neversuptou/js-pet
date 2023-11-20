@@ -207,50 +207,97 @@ showWeather('Tula');
 
 const play = document.querySelector('.play');
 const pause = document.querySelector('.pause');
+const audio = document.querySelector('audio')
 const playPrevBtn = document.querySelector('.prev-play');
 const playNextBtn = document.querySelector('.next-play');
-const list = document.querySelector('ul')
+const list = document.querySelector('.music-list')
 
 const playList = [
   {
       title: 'Aqua Caelestis',
-      src: '/src/sounds/Aqua Caelestis.mp3',
+      src: '/src/sounds/AquaCaelestis.mp3',
       duration: '00:58'
   },
   {
       title: 'River Flows In You',
-      src: '/src/sounds/River Flows In You.mp3',
+      src: '/src/sounds/RiverFlowsInYou.mp3',
       duration: '03:50'
   },
   {
       title: 'Ennio Morricone',
-      src: '/src/sounds/Ennio Morricone.mp3',
+      src: '/src/sounds/EnnioMorricone.mp3',
       duration: '01:37'
   },
   {
     title: 'Summer Wind',
-      src: '/src/sounds/Summer Wind.mp3',
+      src: '/src/sounds/SummerWind.mp3',
       duration: '01:50'
   }
 ]
 
-function playAudio(){
-  let isPlay = false
+  let isPlay = false;
   let playNum = 0;
-}
 
 function createPlayList() {
   for (let i = 0; i < playList.length; i++) {
-      let li =list.createElement('ul');
-      // li.textContent = playList[i].title
-      // list.append(li)
+      let li = document.createElement('ul');
+      li.textContent = playList[i].title
+      li.classList.add('play-item') 
+      list.appendChild(li);
   }
+}
+
+createPlayList();
+
+function selectActiveElement(number) {
+  for (let element of list.children) {
+      element.classList.remove('item-active');
+  }
+  list.children[number].classList.add('item-active');
+}
+
+function playAudio() {
+  play.classList.add('hide-btn');
+  pause.classList.remove('hide-btn');
+  isPlay = true;
+  audio.currentTime = 0;
+  audio.src = playList[playNum].src;
+  audio.play();
+  selectActiveElement(playNum + 1);
+}
+
+function pauseAudio() {
+  audio.pause();
+  isPlay = false;
+  play.classList.remove('hide-btn');
+  pause.classList.add('hide-btn');
 }
 
 function renderAudio() {
   if (!isPlay) {
-    playAudio();
+      playAudio()
   } else {
-    pauseAudio();
+      pauseAudio()
   }
 }
+
+function playPrev() {
+  if(playNum >= 1){
+  playNum -= 1;
+  playAudio();
+  }
+}
+
+function playNext() {
+  if(playNum <= 2){
+  playNum += 1;
+  playAudio();
+  }
+}
+
+play.addEventListener('click', renderAudio);
+pause.addEventListener('click', pauseAudio);
+playPrevBtn.addEventListener('click', playPrev);
+playNextBtn.addEventListener('click', playNext);
+
+console.log(playList[playNum].src)

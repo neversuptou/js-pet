@@ -152,10 +152,13 @@ header {
 .player .music-list {
   color: white; }
   .player .music-list ul {
-    text-align: center;
+    text-align: left;
     margin: 10px;
     padding: 0; }
     .player .music-list ul:before {
       content: "✓ "; }
+
+.item-active:before {
+  color: #c5b358; }
 
 /*# sourceMappingURL=main.css.map */
