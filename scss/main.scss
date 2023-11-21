@@ -1,3 +1,7 @@
+*{
+  margin: 0;
+  padding: 0;
+}
 body{
   overflow: hidden;
   font-family: Arial, Helvetica, sans-serif;
@@ -92,6 +96,7 @@ main{
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
+  margin-top: 115px;
 }
 .row{
 display: flex;
@@ -116,22 +121,39 @@ display: flex;
 .changeQuote{
   background-image: url(/src/icons/reload.svg);
   background-size:cover;
+  margin-bottom: 20px;
   &:active{
     transform: scale(1.1);
     }
+}
+.quote{
+  margin-bottom: 10px;
+}
+.author{
+  margin-bottom: 10px;
 }
 header{
 display: flex;
 justify-content: space-between;
 .weather{
-  display: grid;
   color: white;
-  i{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  row-gap: 5px;
+  width: 180px;
+  min-height: 180px;
+  text-align: left;
+  .weather-icon{
     font-size: 44px;
   }
 }
+.discription-container{
+}
 }
 .city{
+  margin-top: 20px;
   color: white;
   background:none;
   border: none;
@@ -140,10 +162,13 @@ justify-content: space-between;
   border-bottom-color: currentcolor;
   border-bottom: 1px solid white;
   outline: none;
-  font-size: 15px;
+  font-size: 20px;
+  font-weight: bold;
 }
 .player{
 .control-play{
+  text-align: center;
+  margin-top: 20px;
   button{
   background-color: rgba(255, 0, 0, 0);
   border: none;
@@ -159,18 +184,21 @@ justify-content: space-between;
   }
   .play{
     background-image: url(/src/icons/play.svg);
+    width: 40px;
+    height: 40px;
   }
   .pause{
     background-image: url(/src/icons/pause.svg);
+    width: 40px;
+    height: 40px;
+    z-index: 2;
   }
   .next-play{
     background-image: url(/src/icons/play-next.svg);
   }
-  .hide-btn{
-    display: none;
-  }
 }
 .music-list{
+  margin-top: -10px;
   color: white;
   ul{
     text-align: left;
@@ -187,4 +215,6 @@ justify-content: space-between;
       color: #c5b358;
     }
   }
-  
+  .hide{
+    display: none;
+  }

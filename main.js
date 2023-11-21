@@ -257,8 +257,7 @@ function selectActiveElement(number) {
 }
 
 function playAudio() {
-  play.classList.add('hide-btn');
-  pause.classList.remove('hide-btn');
+  play.classList.add('pause');
   isPlay = true;
   audio.currentTime = 0;
   audio.src = playList[playNum].src;
@@ -269,8 +268,7 @@ function playAudio() {
 function pauseAudio() {
   audio.pause();
   isPlay = false;
-  play.classList.remove('hide-btn');
-  pause.classList.add('hide-btn');
+  play.classList.remove('pause');
 }
 
 function renderAudio() {

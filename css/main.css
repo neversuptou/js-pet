@@ -1,4 +1,8 @@
 @charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0; }
+
 body {
   overflow: hidden;
   font-family: Arial, Helvetica, sans-serif;
@@ -80,7 +84,8 @@ main {
 .col-12 {
   width: 100%;
   padding-right: 15px;
-  padding-left: 15px; }
+  padding-left: 15px;
+  margin-top: 115px; }
 
 .row {
   display: flex; }
@@ -101,20 +106,35 @@ main {
 
 .changeQuote {
   background-image: url(/src/icons/reload.svg);
-  background-size: cover; }
+  background-size: cover;
+  margin-bottom: 20px; }
   .changeQuote:active {
     transform: scale(1.1); }
+
+.quote {
+  margin-bottom: 10px; }
+
+.author {
+  margin-bottom: 10px; }
 
 header {
   display: flex;
   justify-content: space-between; }
   header .weather {
-    display: grid;
-    color: white; }
-    header .weather i {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    row-gap: 5px;
+    width: 180px;
+    min-height: 180px;
+    text-align: left; }
+    header .weather .weather-icon {
       font-size: 44px; }
 
 .city {
+  margin-top: 20px;
   color: white;
   background: none;
   border: none;
@@ -123,33 +143,36 @@ header {
   border-bottom-color: currentcolor;
   border-bottom: 1px solid white;
   outline: none;
-  font-size: 15px; }
+  font-size: 20px;
+  font-weight: bold; }
 
-.player .control-play button {
-  background-color: rgba(255, 0, 0, 0);
-  border: none;
-  width: 32px;
-  height: 32px;
-  background-size: cover; }
-  .player .control-play button:active {
-    transform: scale(1.1); }
-
-.player .control-play .prev-play {
-  background-image: url(/src/icons/play-prev.svg); }
-
-.player .control-play .play {
-  background-image: url(/src/icons/play.svg); }
-
-.player .control-play .pause {
-  background-image: url(/src/icons/pause.svg); }
-
-.player .control-play .next-play {
-  background-image: url(/src/icons/play-next.svg); }
-
-.player .control-play .hide-btn {
-  display: none; }
+.player .control-play {
+  text-align: center;
+  margin-top: 20px; }
+  .player .control-play button {
+    background-color: rgba(255, 0, 0, 0);
+    border: none;
+    width: 32px;
+    height: 32px;
+    background-size: cover; }
+    .player .control-play button:active {
+      transform: scale(1.1); }
+  .player .control-play .prev-play {
+    background-image: url(/src/icons/play-prev.svg); }
+  .player .control-play .play {
+    background-image: url(/src/icons/play.svg);
+    width: 40px;
+    height: 40px; }
+  .player .control-play .pause {
+    background-image: url(/src/icons/pause.svg);
+    width: 40px;
+    height: 40px;
+    z-index: 2; }
+  .player .control-play .next-play {
+    background-image: url(/src/icons/play-next.svg); }
 
 .player .music-list {
+  margin-top: -10px;
   color: white; }
   .player .music-list ul {
     text-align: left;
@@ -160,5 +183,8 @@ header {
 
 .item-active:before {
   color: #c5b358; }
+
+.hide {
+  display: none; }
 
 /*# sourceMappingURL=main.css.map */
