@@ -136,20 +136,25 @@ header{
 display: flex;
 justify-content: space-between;
 .weather{
+  padding-right: 20px;
   color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  display: block;
   align-items: flex-start;
   row-gap: 5px;
   width: 180px;
   min-height: 180px;
   text-align: left;
+  input{
+    width: 100%;
+  }
   .weather-icon{
+    margin-top: 10px;
     font-size: 44px;
   }
 }
 .discription-container{
+  margin-top: 20px;
+  display: grid;
 }
 }
 .city{

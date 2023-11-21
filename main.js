@@ -122,18 +122,6 @@ if(LS.getItem('savedName')) {
   formData = LS.getItem('savedName');
   form.value = formData;
 }
-// Получаем ссылку на инпут и кнопку сохранения
-// const input = document.querySelector("userName");
-
-// // Проверяем, есть ли сохраненное значение в кэше
-// if (localStorage.getItem(input)) {
-//   input.value = localStorage.getItem(input);
-// }
-
-// // Обработчик события для сохранения значения в кэше
-// saveBtn.addEventListener("click", function() {
-//   localStorage.setItem("savedInput", input.value);
-// });
 
 // QUOTE
 const quote = document.querySelector('.quote');

@@ -121,17 +121,22 @@ header {
   display: flex;
   justify-content: space-between; }
   header .weather {
+    padding-right: 20px;
     color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    display: block;
     align-items: flex-start;
     row-gap: 5px;
     width: 180px;
     min-height: 180px;
     text-align: left; }
+    header .weather input {
+      width: 100%; }
     header .weather .weather-icon {
+      margin-top: 10px;
       font-size: 44px; }
+  header .discription-container {
+    margin-top: 20px;
+    display: grid; }
 
 .city {
   margin-top: 20px;
